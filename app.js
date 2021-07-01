@@ -5,7 +5,7 @@ const fs = require('fs')
 const port = process.env.PORT || 3000;
 
 var corsOptions = {
-    origin: ['hub.private.staging.lifen.fr']
+    origin: ['https://hub.private.staging.lifen.fr']
   }
 
 const app = express();
