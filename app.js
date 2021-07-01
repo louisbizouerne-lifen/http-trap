@@ -5,12 +5,17 @@ const fs = require('fs')
 const port = process.env.PORT || 3000;
 
 var corsOptions = {
-    origin: ['https://hub.private.staging.lifen.fr']
+    origin: ['*']
   }
 
 const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.get('/', (req, res) => {
     fs.writeFile('req.txt', JSON.stringify(req.query), err => {
@@ -18,7 +23,6 @@ app.get('/', (req, res) => {
             console.error(err)
             return
         }
-        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send('Request saved!')
     })
 })
@@ -29,7 +33,6 @@ app.post('/', (req, res) => {
             console.error(err)
             return
         }
-        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send('Request saved!')
     })
 })
