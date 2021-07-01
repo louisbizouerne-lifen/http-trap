@@ -4,18 +4,13 @@ const fs = require('fs')
 
 const port = process.env.PORT || 3000;
 
-var corsOptions = {
-    origin: ['*'],
-    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE'
-  }
-
 const app = express();
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
