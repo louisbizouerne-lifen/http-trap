@@ -1,0 +1,16 @@
+{
+    "name": "http-trap",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "engines": {
+        "node": "16.x"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "fs": "*"
+    }
+}
