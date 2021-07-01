@@ -5,8 +5,7 @@ const fs = require('fs')
 const port = process.env.PORT || 3000;
 
 var corsOptions = {
-    origin: '*',
-    methods: "GET,PUT,POST,DELETE"
+    origin: ['hub.private.staging.lifen.fr']
   }
 
 const app = express();
