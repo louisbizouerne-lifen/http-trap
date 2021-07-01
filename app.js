@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
             console.error(err)
             return
         }
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send('Request saved!')
     })
 })
@@ -28,6 +29,7 @@ app.post('/', (req, res) => {
             console.error(err)
             return
         }
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send('Request saved!')
     })
 })
