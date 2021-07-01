@@ -5,7 +5,8 @@ const fs = require('fs')
 const port = process.env.PORT || 3000;
 
 var corsOptions = {
-    origin: '*'
+    origin: '*',
+    methods: "GET,PUT,POST,DELETE"
   }
 
 const app = express();
